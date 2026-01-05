@@ -1,27 +1,28 @@
-# Housing Price Prediction using Linear Regression
+# Housing Price Prediction using Machine Learning
 
-This project focuses on predicting median house values using demographic and geographic features from the California Housing dataset. The goal is to apply a complete data science workflow including data exploration, visualization, feature engineering, and machine learning modeling.
+This project predicts median house values using demographic and geographic features from the California Housing dataset. It demonstrates a complete end-to-end data science workflow including data preprocessing, exploratory data analysis, visualization, and machine learning modeling.
 
 ---
 
 ## Project Overview
 
-Accurate house price prediction is an important problem in real estate and urban planning. This project demonstrates how linear regression can be used as a baseline model to understand relationships between housing prices and factors such as income levels, population density, and proximity to the ocean.
+House price prediction is a classic regression problem in data science. This project applies both a baseline linear model and a more powerful ensemble model to understand feature relationships and improve prediction accuracy.
 
 ---
 
 ## Dataset
 
-- Source: California Housing Dataset
-- Rows: 20,640
-- Target Variable: `median_house_value`
+- **Source:** California Housing Dataset
+- **Total Rows:** 20,640
+- **Target Variable:** `median_house_value`
 
-### Features include:
-- Geographic coordinates (latitude, longitude)
+### Features
+- Longitude, Latitude
+- Housing median age
+- Total rooms and bedrooms
+- Population and households
 - Median income
-- Population and household statistics
-- Housing age and room counts
-- Ocean proximity (categorical)
+- Ocean proximity (encoded)
 
 ---
 
@@ -33,41 +34,65 @@ Accurate house price prediction is an important problem in real estate and urban
 4. Data visualization  
 5. Feature encoding  
 6. Train-test split  
-7. Linear Regression model training  
-8. Model evaluation  
+7. Linear Regression model  
+8. Random Forest Regressor  
+9. Model evaluation and comparison  
 
 ---
 
 ## Exploratory Data Analysis
 
-Key visual analyses performed:
-- Distribution of median house values
-- Relationship between median income and house prices
-- House price comparison by ocean proximity
-- Feature correlation heatmap
+The following analyses were performed:
 
-These analyses helped identify strong predictors and validate the choice of a linear model.
+- Distribution of median house values  
+- Relationship between median income and house prices  
+- House prices by ocean proximity  
+- Feature correlation heatmap  
+
+These visualizations helped identify key predictors and justify model selection.
 
 ---
 
-## Model Used
+## Models Implemented
 
-- **Linear Regression**
-- Evaluation Metrics:
-  - Mean Squared Error (MSE)
-  - R² Score
+### 1️⃣ Linear Regression (Baseline Model)
 
-### Results:
-- R² Score ≈ 0.62  
-- Indicates a strong baseline performance for a linear model
+- Simple and interpretable regression model
+- Used as a baseline for performance comparison
+
+**Results:**
+- R² Score ≈ **0.62**
+- Indicates a reasonable linear relationship between features and house prices
+
+---
+
+### 2️⃣ Random Forest Regressor
+
+- Ensemble-based machine learning model
+- Captures non-linear relationships and feature interactions
+
+**Results:**
+- R² Score significantly higher than Linear Regression
+- Demonstrates improved predictive performance
+
+---
+
+## Model Comparison
+
+| Model | R² Score |
+|----|----|
+| Linear Regression | ~0.62 |
+| Random Forest | ~0.80 |
+
+Random Forest outperforms Linear Regression by capturing complex patterns in the data.
 
 ---
 
 ## Key Insights
 
 - Median income is the strongest predictor of house prices
-- Houses closer to the ocean tend to have higher values
-- Linear relationships dominate, making Linear Regression suitable as a baseline
+- Ocean proximity significantly impacts house value
+- Ensemble models perform better than linear models for this dataset
 
 ---
 
@@ -79,8 +104,14 @@ These analyses helped identify strong predictors and validate the choice of a li
 - Matplotlib
 - Seaborn
 - Scikit-learn
+- Jupyter Notebook
 
 ---
+
+
+
+
+
 
 ## How to Run the Project
 
@@ -95,4 +126,3 @@ These analyses helped identify strong predictors and validate the choice of a li
 
 4. Open the notebook
     jupyter notebook notebooks/housing_price_prediction.ipynb
-
