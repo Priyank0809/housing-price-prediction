@@ -82,7 +82,7 @@ These visualizations helped identify key predictors and justify model selection.
 | Model | R² Score |
 |----|----|
 | Linear Regression | ~0.62 |
-| Random Forest | Higher |
+| Random Forest | ~0.80 |
 
 Random Forest outperforms Linear Regression by capturing complex patterns in the data.
 
